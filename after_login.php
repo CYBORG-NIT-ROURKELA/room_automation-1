@@ -28,7 +28,14 @@
     if($res)
     {
       $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
-      $status[$i-1]=$row['status'];
+      if($row['status']==1)
+      {
+        $status[$i-1]='HIGH';
+      }
+      else
+      {
+        $status[$i-1]='LOW';
+      }
     }
   }
 ?>
@@ -190,7 +197,7 @@
         <div class="row">
                    <div class="btn-group" style="margin-left: 23vw;">
 					<div class="col-lg-4" style="text-align: center;">
-                     <button type="button" id="club" class="btn btn-light btn-lg active">Lights</button>
+                     <button type="button" id="club" class="btn btn-light btn-lg">Lights</button>
 					</div>
 					<div class="col-lg-4" style="text-align: center;">
                      <button type="button" id="event" class="btn btn-light btn-lg">Fan</button>

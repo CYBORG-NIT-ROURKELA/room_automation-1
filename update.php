@@ -38,7 +38,7 @@ if ($_GET['id']) {
 		$query = mysqli_query($con,"UPDATE appliances SET status='0' WHERE id=$id ");
 	}
 
-	
+
 
 
 
@@ -50,7 +50,7 @@ if ($_GET['id']) {
 		{
 			echo "helani";
 		}
-		header('Location: after_login.php');
+		header('Location: abcd.php');
 }
 
 ?>

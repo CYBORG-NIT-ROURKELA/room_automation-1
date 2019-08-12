@@ -20,7 +20,7 @@ include 'db.php';
 			if ($password==$db_password)
 			{
 				$_SESSION['password']=$password;
-				header('Location: after_login.php');
+				header('Location: abcd.php');
 			}
 			else
 			{
