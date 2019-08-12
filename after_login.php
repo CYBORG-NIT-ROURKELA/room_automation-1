@@ -25,7 +25,7 @@
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="dist/css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -35,7 +35,7 @@
 <!-- ------------------------------------------------------------------------- -->
 
 
-
+<!-- 
 <script>
 	
         $(document).ready(function() {
@@ -91,8 +91,8 @@
                         alert("failed to toggle digital output")
                     }}})}
 	
-    </script>
-
+    </script> -->
+<!-- 
     <script>
         $(document).ready(function() {
             setInterval("getTemperature()", 5000);
@@ -103,10 +103,18 @@
             var someUrl = "/analog_inputs";
             $.ajax({ url:someUrl,dataType:"text",success: function(response) {$("#temp").html(response + "&#8451;");}})}
 	</script>
+ -->
 
-
-
-
+<!-- 
+<script>
+  
+  $(document).ready(function() {
+  $('button').click(function(){
+      $('#2').toggle();
+  });
+});
+</script>
+ -->
 
 <!-- ------------------------------------------------------------------------- -->
 
@@ -139,24 +147,22 @@
 </div>
 <br>
 <div class="well container text-center"><h4>Hello..<?php echo $_SESSION['first_name']; ?></h4></div>
-<div class="container">
+<div class="container" style="text-align: center;">
                 <!-- ============================================================== -->
                 <!-- Sales Cards  -->
                 <!-- ============================================================== -->
-             	<div class="row">
-                   <div class="btn-group">
-					<div class="col-md-5">
+        <div class="row">
+                   <div class="btn-group" style="margin-left: 23vw;">
+					<div class="col-lg-4" style="text-align: center;">
                      <button type="button" id="club" class="btn btn-light btn-lg active">Lights</button>
 					</div>
-					<div class="col-md-5">
+					<div class="col-lg-4" style="text-align: center;">
                      <button type="button" id="event" class="btn btn-light btn-lg">Fan</button>
 					</div>
-					<div class="col-md-7">
+					<div class="col-lg-4" style="text-align: center;">
                      <button type="button" id="project" class="btn btn-light btn-lg">Workstation</button>
 					</div>
-					<div class="col-md-6">
-                     <button type="button" id="project1" class="btn btn-light btn-lg">Temperature</button>
-					</div>
+					
                    </div>
                 </div>
                     <br><br><br>
@@ -172,28 +178,24 @@
 							<div class="row">
 							 <div class="col-md-4">								
 							  
-								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch1" data-size="large" name="example" onclick="digital_output_toggle('switch1')"></button>
-								  <label class="custom-control-label" for="switch1">Light 1</label>
-								</div>
+								<button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=1'">Light 1</button>
+                
 								<br>
 								<br>
 								<br>
 						
                                 
-								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch2" name="example" onclick="digital_output_toggle('switch2')"></button>
-								  <label class="custom-control-label" for="switch2">Light 2</label>
-								</div>
+								<button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=2'">Light 2</button>
+                
+                
 								<br>
 								<br>
 								<br>
 						
 							  
-								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch3" name="example" onclick="digital_output_toggle('switch3')"></button>
-								  <label class="custom-control-label" for="switch3">Light 3</label>
-								</div>
+								<button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=3'">Light 3</button>
+                
+                
 								<br>
 								<br>
 								<br>
@@ -215,8 +217,7 @@
 							   <div class="col-md-4">
                              
 								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch4" name="example" onclick="digital_output_toggle('switch4')"></button>
-								  <label class="custom-control-label" for="switch4">Fan 1</label>
+								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=4'">Fan 1</button>
 								</div>
 								<br>
 								<br>
@@ -224,8 +225,8 @@
 						
                                
 								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch5" name="example" onclick="digital_output_toggle('switch5')"></button>
-								  <label class="custom-control-label" for="switch5">Fan 2</label>
+								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=5'">Fan 2</button>
+								  
 								</div>
 								<br>
 								<br>
@@ -233,8 +234,8 @@
 					
 							  
 								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch6" name="example" onclick="digital_output_toggle('switch6')"></button>
-								  <label class="custom-control-label" for="switch6">Fan 3</label>
+								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=6'">Fan 3</button>
+								  
 								</div>
 								<br>
 								<br>
@@ -257,8 +258,8 @@
 							  <div class="col-md-4">
                               
 								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch7" name="example" onclick="digital_output_toggle('switch7')"></button>
-								  <label class="custom-control-label" for="switch7">Workstation 1</label>
+								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=7'">Workstation 1</button>
+								  
 								</div>
 								<br>
 								<br>
@@ -266,8 +267,8 @@
 					
                            
 								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch8" name="example" onclick="digital_output_toggle('switch8')"></button>
-								  <label class="custom-control-label" for="switch8">Workstation 2</label>
+								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=8'">Workstation 2</button>
+								  
 								</div>
 								<br>
 								<br>
@@ -275,8 +276,8 @@
 				
 							
 								<div class="custom-control custom-switch">
-								  <button type="checkbox" class="custom-control-input" id="switch9" name="example" onclick="digital_output_toggle('switch9')"></button>
-								  <label class="custom-control-label" for="switch9">Workstation 3</label>
+								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=9'">Workstation 3</button>
+								  
 								</div>
 								<br>
 								<br>
@@ -292,60 +293,10 @@
                     </div>
                     
 
-        <!-- 4th -->
-        <div class="container" id="temp" style="display: none;">
-                  <div class="card">
-                            <div class="card-body">
-                             <div class="row">
-                              <div class="col-md-4">
-                                
-                                <div class="custom-control custom-switch">
-                                  <button type="checkbox" class="custom-control-input" id="switch10" name="example" onclick="digital_output_toggle('switch10')"></button>
-                                  <label class="custom-control-label" for="switch7">temp 1</label>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                         
-                              
-                                <div class="custom-control custom-switch">
-                                  <button type="checkbox" class="custom-control-input" id="switch11" name="example" onclick="digital_output_toggle('switch11')"></button>
-                                  <label class="custom-control-label" for="switch8">temp 2</label>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                           
-                              
-                                <div class="custom-control custom-switch">
-                                  <button type="checkbox" class="custom-control-input" id="switch12" name="example" onclick="digital_output_toggle('switch12')"></button>
-                                  <label class="custom-control-label" for="switch9">temp 3</label>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                         
-                              </div>
-                              <div class="col-md-6">
-                               <img src="pic3.jpg" width="100%" height="100%">
-                              </div>
-                             </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-            </div>
 			
             </div>
 			<!--4TH -->
-				<div class="container" id="pro" style="display: none;">
-                        <div class="card">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-info">Temperature</button>
-                            </div>
-                        </div>
-                    </div>
+
 <br>
 <br>
 <br>
