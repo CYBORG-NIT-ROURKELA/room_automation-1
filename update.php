@@ -38,6 +38,8 @@ if ($_GET['id']) {
 		$query = mysqli_query($con,"UPDATE appliances SET status='0' WHERE id=$id ");
 	}
 
+	
+
 
 
 		if($query)

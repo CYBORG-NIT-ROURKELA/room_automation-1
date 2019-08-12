@@ -14,6 +14,42 @@
 	// }
 ?>
 
+<?php
+  include 'db.php';
+?>
+
+
+<?php
+
+  $status = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'];
+  for($i=1 ; $i<10 ; $i++){
+    $query = "SELECT * FROM appliances WHERE id=$i ";
+    $res = mysqli_query($con, $query);
+    if($res)
+    {
+      $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+      $status[$i-1]=$row['status'];
+    }
+  }
+?>
+<!-- tala part ta kama karuni tike dekha mu I mean HIGH and LOW -->
+<?php
+    
+  $s=['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'];
+  $i=0;
+  for($i=0; $i<10; $i++)
+  {
+    if($status[$i]=='1')
+    {
+      $s[$i]=='HIGH';
+    }
+    else
+    {
+      $s[$i]=='LOW';
+    }
+  }
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -179,6 +215,7 @@
 							 <div class="col-md-4">								
 							  
 								<button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=1'">Light 1</button>
+                <label>Status: <?php echo $status[0]; ?></label>
                 
 								<br>
 								<br>
@@ -186,7 +223,7 @@
 						
                                 
 								<button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=2'">Light 2</button>
-                
+                <label>Status: <?php echo $status[1]; ?></label>
                 
 								<br>
 								<br>
@@ -194,7 +231,7 @@
 						
 							  
 								<button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=3'">Light 3</button>
-                
+                <label>Status: <?php echo $status[2]; ?></label>
                 
 								<br>
 								<br>
@@ -218,6 +255,7 @@
                              
 								<div class="custom-control custom-switch">
 								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=4'">Fan 1</button>
+                  <label>Status: <?php echo $status[3]; ?></label>
 								</div>
 								<br>
 								<br>
@@ -226,7 +264,7 @@
                                
 								<div class="custom-control custom-switch">
 								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=5'">Fan 2</button>
-								  
+								  <label>Status: <?php echo $status[4]; ?></label>
 								</div>
 								<br>
 								<br>
@@ -235,7 +273,7 @@
 							  
 								<div class="custom-control custom-switch">
 								  <button type="button" class="btn btn-info" onclick="window.location = 'update.php?id=6'">Fan 3</button>
-								  
+								  <label>Status: <?php echo $status[5]; ?></label>
 								</div>
 								<br>
 								<br>
